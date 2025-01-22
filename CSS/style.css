@@ -1,0 +1,613 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Betűtípus beállítása */
+    margin: 0; /* Margó beállítása */
+    padding: 0; /* Padding beállítása */
+    margin-top: 60px; /* Margin-top beállítása */
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el. A Flexbox egy rugalmas elrendezési modell, amely lehetővé teszi a konténer elemek és azok gyermekeinek hatékony és rugalmas elrendezését.*/
+    flex-direction: column; /*Flexbox elrendezési modell egyik beállítása, amely meghatározza, hogy a flex konténer gyermekelemei milyen irányban legyenek elrendezve.*/
+    min-height: calc(100vh - 60px); /* A min-height tulajdonság beállítása a tartalomhoz, hogy a tartalom ne legyen rövidebb, mint a képernyő magassága */
+    overflow: auto; /* Azt határozza meg, hogy csak a tartalom túlcsordulása esetén jelenjen meg görgetősáv */
+}
+
+header {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el. A Flexbox egy rugalmas elrendezési modell, amely lehetővé teszi a konténer elemek és azok gyermekeinek hatékony és rugalmas elrendezését.*/
+    justify-content: space-between; /* A tartalom elrendezésének beállítása a flexbox segítségével. A space-between érték azt jelenti, hogy a gyermekelemek egyenletesen vannak elosztva a konténeren belül, és az első elem a konténer bal szélén van, az utolsó elem pedig a konténer jobb szélén van.*/
+    align-items: center; /* A tartalom elrendezésének beállítása a flexbox segítségével. Az align-items tulajdonság segítségével beállíthatjuk a gyermekelemek függőleges elrendezését a konténeren belül. Az "center" érték azt jelenti, hogy a gyermekelemek középre vannak igazítva a konténeren belül.*/
+    padding: 0px 20px; /* A padding beállítása a headerhez */
+    background-color: #f8f8f8; /* A header háttérszínének beállítása */
+    border-bottom: 1px solid #ddd; /* A header alatti szegély beállítása. */
+    position: fixed; /* Fixáljuk a header-t az oldal tetején */
+    top: 0; /* A header a lap tetején legyen */
+    width: 100%; /* A header teljes szélességű legyen */
+    z-index: 1000; /* A header z-index értékének beállítása. A z-index tulajdonság meghatározza, hogy egy elem milyen sorrendben jelenjen meg a többi elemhez képest. Az 1000-es érték azt jelenti, hogy a header mindig a legfelső rétegben jelenik meg. */
+    max-height: 100px; /* A header maximális magassága */
+}
+
+.logo {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el. A Flexbox egy rugalmas elrendezési modell, amely lehetővé teszi a konténer elemek és azok gyermekeinek hatékony és rugalmas elrendezését.*/
+    justify-content: space-between; /* A tartalom elrendezésének beállítása a flexbox segítségével. A space-between érték azt jelenti, hogy a gyermekelemek egyenletesen vannak elosztva a konténeren belül, és az első elem a konténer bal szélén van, az utolsó elem pedig a konténer jobb szélén van.*/
+    font-size: 24px; /* A betűméret beállítása */
+    font-weight: bold;  /* A betű vastagságának beállítása */
+    max-height: 60px;   /* A maximális magasság beállítása */
+}
+
+.logo p {
+    margin: 0; /* A margó beállítása */
+    padding: 0; /* A padding beállítása */
+    display: inline-block; /* Az elem blokkosítása. Az inline-block érték azt jelenti, hogy az elem blokkosított, de a szomszédos elemekkel egy sorban helyezkedik el. */
+    line-height: 60px; /* A line-height tulajdonság meghatározza a sorok közötti távolságot. */
+    font-size: 24px; /* A betűméret beállítása */
+    font-weight: bold;  /* A betű vastagságának beállítása */
+    color: black;   /* A szöveg színének beállítása */
+    text-decoration: none;  /* A szöveg aláhúzásának eltávolítása */
+    cursor: pointer;    /* Az egérmutató beállítása */
+    padding-left: 20px; /* A padding beállítása */
+}
+
+.logo img {
+    position: relative; /* A pozíció beállítása. A relative érték azt jelenti, hogy az elem a normál helyzetében marad, de elmozdítható a megadott irányokban. így a kép a szöveg mellett lesz. */
+    top: auto; /* A kép pozíciójának beállítása */
+    width: 60px; /* A kép szélességének beállítása */
+    height: 60px; /* A kép magasságának beállítása */
+    object-fit: cover; /* Az object-fit tulajdonság meghatározza, hogy az elem hogyan illeszkedik a konténerbe. Az "cover" érték azt jelenti, hogy az elem kitölti a konténert, és a felesleges részek levágódnak*/
+    border-radius: 50%; /* A kép kerete kerek legyen */
+}
+
+nav ul {
+    list-style: none; /* A lista stílusának eltávolítása */
+    margin: 0; /* A margó beállítása */
+    padding: 0; /* A padding beállítása */
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el. A Flexbox egy rugalmas elrendezési modell, amely lehetővé teszi a konténer elemek és azok gyermekeinek hatékony és rugalmas elrendezését. */
+    flex-direction: row; /* A flexbox irányának beállítása. Az "row" érték azt jelenti, hogy a gyermekelemek egy sorban helyezkednek el. */
+    align-items: center;
+    gap: 20px; /* A gap tulajdonság meghatározza a gyermekelemek közötti távolságot. */
+}
+
+nav ul li {
+    position: relative; /* A pozíció beállítása. A relative érték azt jelenti, hogy az elem a normál helyzetében marad, de elmozdítható a megadott irányokban. */
+    display: inline-block; /* Az inline-block érték azt jelenti, hogy az elem blokkosított, de a szomszédos elemekkel egy sorban helyezkedik el. */
+    margin: 0 15px; /* A margó beállítása */
+}
+
+nav ul li a {
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+    color: black; /* A szöveg színének beállítása */
+    padding: 5px 0; /* A padding beállítása */
+    display: inline-block; /* Az inline-block érték azt jelenti, hogy az elem blokkosított, de a szomszédos elemekkel egy sorban helyezkedik el. */
+}
+
+nav ul li a::after { /* A ::after pszeudo elem beállítása, amely a link alá húzását szimulálja */ 
+    content: ''; /* Tartalom beállítása, amely a ::after pszeudo elemhez tartozik */
+    position: absolute; /* A pozíció beállítása. Az absolute érték azt jelenti, hogy az elem abszolút pozícióban van a legközelebbi pozícionált őselemhez képest. */
+    width: 0; /* A szélesség beállítása */
+    height: 2px;    /* A magasság beállítása */
+    display: block; /* A blokkosított elem azt jelenti, hogy a szomszédos elemekkel egy sorban helyezkedik el. */   
+    margin-top: 5px; /* A margó beállítása a tetején */
+    right: 0; /* A jobb oldali pozíció beállítása */
+    background: black; /* A háttérszín beállítása */
+    transition: width 0.4s ease; /* Az átmenet beállítása a szélesség változására */
+    -webkit-transition: width 0.4s ease; /* Az átmenet beállítása a szélesség változására Webkit böngészőkben */
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* A szélesség beállítása */
+    left: 0; /* A bal oldali pozíció beállítása */
+    background: black; /* A háttérszín beállítása */
+}
+
+.login-btn {
+    padding: 10px 20px; /* A padding beállítása a gombhoz */
+    margin-right: 40px; /* A margó beállítása a gombhoz */
+    font-size: 16px; /* A betűméret beállítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+    background-color: #007BFF; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.login-btn:hover {
+    background-color: #0056b3; /* A háttérszín beállítása fókusz alatt álló elemnél */
+}
+
+.modal {
+    display: none; /* Az elem alapértelmezett megjelenítése. none érték azt jelenti, hogy az elem nem látható. */
+    position: fixed; /* A pozíció beállítása */
+    z-index: 1; /* A z-index beállítása */
+    left: 0; /* A bal oldali pozíció beállítása */
+    top: 0; /* A felső pozíció beállítása */
+    width: 100%; /* A szélesség beállítása */
+    height: 100%; /* A magasság beállítása */
+    overflow: auto; /* A túlcsordulás beállítása */
+    background-color: rgba(0, 0, 0, 0.5); /* A háttérszín beállítása */
+}
+
+.modal-content {
+    background-color: #fefefe; /* A háttérszín beállítása */
+    margin: 13% auto; /* A margó beállítása */
+    padding: 20px; /* A padding beállítása */
+    border: 1px solid #888; /* A szegély beállítása */
+    width: 400px; /* A szélesség beállítása */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+    border-radius: 10px; /* A szegély lekerekítése */
+    animation: fadeIn 0.5s; /* Az animáció beállítása */
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } /* Az animáció kezdő állapota */
+    to { opacity: 1; } /* Az animáció végállapota */
+}
+
+.close-btn {
+    color: #aaa; /* A szöveg színének beállítása */
+    float: right; /* Az elem igazítása jobbra */
+    font-size: 28px; /* A betűméret beállítása */
+    font-weight: bold; /* A betű vastagságának beállítása */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black; /* A szöveg színének beállítása hover és fókusz állapotban */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+}
+
+.form-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    flex-direction: column; /* A flexbox irányának beállítása */
+}
+
+.form-container h2 {
+    text-align: center; /* A szöveg igazítása középre */
+}
+
+.form-container form {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    flex-direction: column; /* A flexbox irányának beállítása */
+}
+
+.form-container label {
+    margin-top: 10px; /* A margó beállítása a tetején */
+}
+
+.form-container input {
+    padding: 10px; /* A padding beállítása */
+    margin-top: 5px; /* A margó beállítása a tetején */
+    margin-bottom: 10px; /* A margó beállítása alul */
+    border: 1px solid #ccc; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.form-container button {
+    padding: 10px; /* A padding beállítása */
+    background-color: #007BFF; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    cursor: pointer; /* Az egérmutató beállítása */
+}
+
+.form-container button:hover {
+    background-color: #0056b3; /* A háttérszín beállítása hover állapotban */
+}
+
+.form-container p {
+    text-align: center; /* A szöveg igazítása középre */
+}
+
+.form-container a {
+    color: #007BFF; /* A szöveg színének beállítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+}
+
+.form-options {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: space-between; /* A tartalom elrendezésének beállítása */
+    align-items: center; /* A tartalom igazítása középre */
+    margin-bottom: 10px; /* A margó beállítása alul */
+}
+
+.form-options label {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    align-items: center; /* A tartalom igazítása középre */
+}
+
+.form-options a {
+    color: #007BFF; /* A szöveg színének beállítása */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+}
+
+.form-options a:hover {
+    text-decoration: underline; /* A szöveg aláhúzásának beállítása hover állapotban */
+}
+
+.slideshow-container {
+    position: relative; /* A pozíció beállítása */
+    width: 100%; /* A szélesség beállítása */
+    height: 100%; /* A magasság beállítása */
+    top: 0; /* A felső pozíció beállítása */
+    left: 0; /* A bal oldali pozíció beállítása */
+    right: 0; /* A jobb oldali pozíció beállítása */
+}
+
+.mySlides img {
+    width: 100%; /* A szélesség beállítása */
+    height: 100%; /* A magasság beállítása */
+    object-fit: cover; /* Az object-fit tulajdonság beállítása */
+}
+
+.prev, .next {
+    cursor: pointer; /* Az egérmutató beállítása */
+    position: absolute; /* A pozíció beállítása */
+    top: 50%; /* A felső pozíció beállítása */
+    width: auto; /* A szélesség beállítása */
+    padding: 16px; /* A padding beállítása */
+    margin-top: -22px; /* A margó beállítása a tetején */
+    color: white; /* A szöveg színének beállítása */
+    font-weight: bold; /* A betű vastagságának beállítása */
+    font-size: 18px; /* A betűméret beállítása */
+    transition: 0.6s ease; /* Az átmenet beállítása */
+    border-radius: 0 3px 3px 0; /* A szegély lekerekítése */
+    user-select: none; /* A szöveg kijelölésének tiltása */
+    /*transform: translateY(-50%);*/
+}
+
+.next {
+    right: 0; /* A jobb oldali pozíció beállítása */
+    border-radius: 3px 0 0 3px; /* A szegély lekerekítése */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8); /* A háttérszín beállítása hover állapotban */
+}
+
+.fade {
+    -webkit-animation-name: fade; /* Az animáció neve Webkit böngészőkben */
+    -webkit-animation-duration: 1.5s; /* Az animáció időtartama Webkit böngészőkben */
+    animation-name: fade; /* Az animáció neve */
+    animation-duration: 1.5s; /* Az animáció időtartama */
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} /* Az animáció kezdő állapota Webkit böngészőkben */
+    to {opacity: 1} /* Az animáció végállapota Webkit böngészőkben */
+}
+
+@keyframes fade {
+    from {opacity: .4} /* Az animáció kezdő állapota */
+    to {opacity: 1} /* Az animáció végállapota */
+}
+
+.content h1{
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 40px 0; /* A margó beállítása */
+}
+.content p{
+    text-align: justify; /* A szöveg igazítása sorkizártra */
+    margin: 20px 0; /* A margó beállítása */
+    padding:0 40px; /* A padding beállítása */
+}
+/* Új dobozok stílusai */
+.box-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: space-around; /* A tartalom elrendezésének beállítása */
+    flex-wrap: wrap; /* A tartalom tördelése több sorba */
+    /*margin: 5px 0;
+    padding: 0px; /* Adjunk hozzá padding-et a konténerhez */
+    background-color: #f8f8f8; /* Adjunk hozzá háttérszínt a konténerhez */
+}
+
+.box {
+    width: 400px; /* A szélesség beállítása */
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 10px; /* A margó beállítása */
+    padding: 10px; /* A padding beállítása */
+    border: 1px solid #ddd; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+    background-color: white; /* Adjunk hozzá háttérszínt a dobozokhoz */
+}
+
+.box img {
+    width: 100%; /* A szélesség beállítása */
+    height: 400px; /* A magasság beállítása */
+    object-fit: cover; /* Az object-fit tulajdonság beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.box p {
+    margin: 10px 0; /* A margó beállítása */
+    font-size: 16px; /* A betűméret beállítása */
+}
+
+.view-btn {
+    padding: 10px 20px; /* A padding beállítása */
+    font-size: 16px; /* A betűméret beállítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+    background-color: #007BFF; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.view-btn a {
+    color: white; /* A szöveg színének beállítása */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+}
+
+.view-btn:hover {
+    background-color: #0056b3; /* A háttérszín beállítása hover állapotban */
+}
+
+.interest-btn {
+    padding: 10px 20px; /* A padding beállítása */
+    font-size: 16px; /* A betűméret beállítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+    background-color: #28a745; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    margin-top: 10px; /* A margó beállítása a tetején */
+}
+
+.interest-btn a {
+    color: white; /* A szöveg színének beállítása */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+}
+
+.interest-btn:hover {
+    background-color: #218838; /* A háttérszín beállítása hover állapotban */
+}
+
+/* Termék dobozok stílusai */
+.product-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    flex-wrap: wrap; /* A tartalom tördelése több sorba */
+    justify-content: space-evenly; /* A tartalom elrendezésének beállítása */
+    margin: 20px 0; /* A margó beállítása */
+}
+
+.product-box {
+    width: 300px; /* A szélesség beállítása */
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 10px; /* A margó beállítása */
+    padding: 10px; /* A padding beállítása */
+    border: 1px solid #ddd; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+    background-color: white; /* Adjunk hozzá háttérszínt a dobozokhoz */
+    position: relative; /* A pozíció beállítása */
+    display: block; /* Az elem blokkosítása */
+}
+
+.product-images {
+    position: relative; /* A pozíció beállítása */
+    width: 100%; /* A szélesség beállítása */
+}
+
+.product-image {
+    width: 100%; /* A szélesség beállítása */
+    height: 420px; /* A magasság beállítása */
+    object-fit: cover; /* Az object-fit tulajdonság beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.product-details {
+    position:static; /* A pozíció beállítása */
+    
+}
+
+/* Kategória gombok stílusai */
+.category-buttons {
+    text-align: center; /* A szöveg igazítása középre */
+    margin-bottom: 20px; /* A margó beállítása alul */
+}
+
+.category-btn {
+    padding: 10px 20px; /* A padding beállítása */
+    font-size: 16px; /* A betűméret beállítása */
+    cursor: pointer; /* Az egérmutató beállítása */
+    background-color: #007BFF; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    margin: 5px; /* A margó beállítása */
+}
+
+.category-btn:hover {
+    background-color: #0056b3; /* A háttérszín beállítása hover állapotban */
+}
+
+.category-btn.active {
+    background-color: #0056b3; /* A háttérszín beállítása aktív állapotban */
+}
+
+/* Footer stílusai */
+footer {
+    background-color: #333; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    text-align: center; /* A szöveg igazítása középre */
+    padding: 20px 0; /* A padding beállítása */
+    position: relative; /* A pozíció beállítása */
+    bottom: 0; /* Az alsó pozíció beállítása */
+    width: 100%; /* A szélesség beállítása */
+    margin-top: auto; /* A margó beállítása a tetején */
+}
+
+.footer-content {
+    max-width: 1200px; /* A maximális szélesség beállítása */
+    margin: auto; /* A margó beállítása */
+}
+
+.footer-content p {
+    margin: 0; /* A margó beállítása */
+    padding: 0; /* A padding beállítása */
+}
+
+.footer-content .socials {
+    list-style: none; /* A lista stílusának eltávolítása */
+    padding: 0; /* A padding beállítása */
+    margin: 10px 0 0 0; /* A margó beállítása */
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: center; /* A tartalom elrendezésének beállítása */
+}
+
+.footer-content .socials li {
+    margin: 0 10px; /* A margó beállítása */
+}
+
+.footer-content .socials li a {
+    color: white; /* A szöveg színének beállítása */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+    font-size: 20px; /* A betűméret beállítása */
+}
+
+.footer-content .socials li a:hover {
+    color: #007BFF; /* A szöveg színének beállítása hover állapotban */
+}
+
+/* Team section styles */
+.team-section {
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 0 400px; /* A margó beállítása */
+}
+
+.team-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: space-around; /* A tartalom elrendezésének beállítása */
+    flex-wrap: wrap; /* A tartalom tördelése több sorba */
+    
+}
+
+.team-member {
+    width: 300px; /* A szélesség beállítása */
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 10px; /* A margó beállítása */
+    padding: 10px; /* A padding beállítása */
+    border: 1px solid #ddd; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+    background-color: white; /* Adjunk hozzá háttérszínt a dobozokhoz */
+}
+
+.team-member img {
+    width: 100%; /* A szélesség beállítása */
+    height: 300px; /* A magasság beállítása */
+    object-fit: cover; /* Az object-fit tulajdonság beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+}
+
+.team-member h3 {
+    margin: 10px 0; /* A margó beállítása */
+    font-size: 20px; /* A betűméret beállítása */
+}
+
+.team-member p {
+    font-size: 16px; /* A betűméret beállítása */
+    text-align: justify; /* A szöveg igazítása sorkizártra */
+}
+
+/* Contact information section styles */
+.contact-info {
+    text-align: center; /* A szöveg igazítása középre */
+    margin: 40px 0; /* A margó beállítása */
+}
+
+.contact-info h2 {
+    margin-bottom: 20px; /* A margó beállítása alul */
+}
+
+.contact-info p {
+    font-size: 16px; /* A betűméret beállítása */
+    margin: 10px 0; /* A margó beállítása */
+}
+
+.contact-info .socials {
+    list-style: none; /* A lista stílusának eltávolítása */
+    padding: 0; /* A padding beállítása */
+    margin: 20px 0 0 0; /* A margó beállítása */
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: center; /* A tartalom elrendezésének beállítása */
+    gap: 20px; /* A gap tulajdonság beállítása */
+}
+
+.contact-info .socials li {
+    margin: 0 10px; /* A margó beállítása */
+}
+
+.contact-info .socials li a {
+    color: black; /* A szöveg színének beállítása */
+    text-decoration: none; /* A szöveg aláhúzásának eltávolítása */
+    font-size: 20px; /* A betűméret beállítása */
+}
+
+.contact-info .socials li a:hover {
+    color: #007BFF; /* A szöveg színének beállítása hover állapotban */
+}
+
+/* Enhanced form design */
+.form-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: center; /* A tartalom elrendezésének beállítása */
+    margin: 40px 0; /* A margó beállítása */
+}
+
+.contact-form {
+    max-width: 600px; /* A maximális szélesség beállítása */
+    width: 100%; /* A szélesség beállítása */
+    padding: 20px; /* A padding beállítása */
+    height: 400px; /* A magasság beállítása */
+    border: 1px solid #ddd; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+    background-color: white; /* Adjunk hozzá háttérszínt a dobozokhoz */
+}
+
+.contact-form label {
+    display: block; /* Az elem blokkosítása */
+    margin-bottom: 5px; /* A margó beállítása alul */
+    font-weight: bold; /* A betű vastagságának beállítása */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* A szélesség beállítása */
+    padding: 10px; /* A padding beállítása */
+    margin-bottom: 20px; /* A margó beállítása alul */
+    border: 1px solid #ccc; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-sizing: border-box; /* A box-sizing tulajdonság beállítása */
+}
+
+.contact-form button {
+    width: 100%; /* A szélesség beállítása */
+    padding: 10px; /* A padding beállítása */
+    background-color: #007BFF; /* A háttérszín beállítása */
+    color: white; /* A szöveg színének beállítása */
+    border: none; /* A szegély eltávolítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    cursor: pointer; /* Az egérmutató beállítása */
+    font-size: 16px; /* A betűméret beállítása */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* A háttérszín beállítása hover állapotban */
+}
+
+.contact-container {
+    display: flex; /* A tartalmat flexbox segítségével rendezzük el */
+    justify-content: space-around; /* A tartalom elrendezésének beállítása */
+    flex-wrap: wrap; /* A tartalom tördelése több sorba */
+    margin: 40px 0; /* A margó beállítása */
+}
+
+.map-container, .contact-form {
+    flex: 1 1 45%; /* A flex tulajdonság beállítása */
+    min-width: 300px; /* A minimális szélesség beállítása */
+    height: 400px; /* A magasság beállítása */
+    border: 1px solid #ddd; /* A szegély beállítása */
+    border-radius: 5px; /* A szegély lekerekítése */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Az árnyék beállítása */
+}
+
+

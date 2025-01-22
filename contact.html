@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>KHN Dekor - Elérhetőség</title>
+   <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+   <link rel="stylesheet" href="./CSS/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="./JS/script.js" defer></script>
+</head>
+<body>
+   <header>
+      <div class="logo">
+         <img src="./img/logo.png" alt="logo">
+         <p>KHN DEKOR</p>
+      </div>
+      <nav>
+         <ul>
+            <li><a href="./index.html">Főoldal</a></li>
+            <li><a href="./products.html">Termékek</a></li>
+            <li><a href="./about.html">Rólunk</a></li>
+            <li><a href="./contact.html">Elérhetőség</a></li>
+         </ul>
+      </nav>
+      <button class="login-btn">Bejelentkezés</button>
+   </header>
+   <div class="content">
+      <h1>Elérhetőség</h1>
+      <p>Keress bennünket bizalommal az alábbi módok valamelyikén!</p>
+      <div class="contact-container">
+         <div class="form-container">
+            <form class="contact-form">
+               <label for="name">Név:</label>
+               <input type="text" id="name" name="name" required autocomplete="name">
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required autocomplete="email">
+               <label for="message">Üzenet:</label>
+               <textarea id="message" name="message" required autocomplete="off"></textarea>
+               <button type="submit">Küldés</button>
+            </form>
+         </div>
+         <div class="contact-info">
+            <h2>Kapcsolat</h2>
+            <p><strong>Cím:</strong> 1234 Budapest, Fő utca 1.</p>
+            <p><strong>Telefon:</strong> +36 1 234 5678</p>
+            <p><strong>Email:</strong> info@khndekor.hu</p>
+            <h2>Kövess minket</h2>
+            <ul class="socials">
+               <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+         </div>
+      
+      </div>
+      <div id="map" class="map-container"></div>
+   </div>
+   <div id="modal" class="modal">
+      <div class="modal-content">
+         <span class="close-btn">&times;</span>
+         <div id="login-form" class="form-container">
+            <h2>Bejelentkezés</h2>
+            <form>
+               <label for="username">Felhasználónév:</label>
+               <input type="text" id="username" name="username" required autocomplete="username">
+               <label for="password">Jelszó:</label>
+               <input type="password" id="password" name="password" required autocomplete="current-password">
+               <div class="form-options">
+                  <label><input type="checkbox" id="remember-me" name="remember-me"> Emlékezz rám</label>
+                  <a href="#" id="forgot-password">Elfelejtett jelszó?</a>
+               </div>
+               <button type="submit">Bejelentkezés</button>
+               <p>Nincs fiókod? <a href="#" id="show-register">Regisztráció</a></p>
+            </form>
+         </div>
+         <div id="register-form" class="form-container" style="display: none;">
+            <h2>Regisztráció</h2>
+            <form>
+               <label for="new-username">Felhasználónév:</label>
+               <input type="text" id="new-username" name="new-username" required autocomplete="username">
+               <label for="new-password">Jelszó:</label>
+               <input type="password" id="new-password" name="new-password" required autocomplete="new-password">
+               <button type="submit">Regisztráció</button>
+               <p>Van már fiókod? <a href="#" id="show-login">Bejelentkezés</a></p>
+            </form>
+         </div>
+      </div>
+   </div>
+   <footer>
+      <div class="footer-content">
+         <p>&copy; 2024 KHN Dekor. Minden jog fenntartva.</p>
+      </div>
+   </footer>
+   <script>
+      function initMap() {
+         var location = {lat: 48.1047, lng: 20.7784}; // Miskolc, Győri kapu 12 koordinátái
+         var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location,
+            mapId: 'YOUR_MAP_ID' // Add your valid map ID here
+         });
+         var marker = new google.maps.marker.AdvancedMarkerElement({
+            position: location,
+            map: map,
+            title: 'Miskolc, Győri kapu 12'
+         });
+      }
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4n3sBzoU_sdmDV7vlZRaVCOKcctF7ZIo&callback=initMap&libraries=marker" async defer></script>
+</body>
+</html>
