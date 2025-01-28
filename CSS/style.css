@@ -507,7 +507,6 @@ footer {
     text-align: justify; /* A szöveg igazítása sorkizártra */
 }
 
-/* Contact information section styles */
 .contact-info {
     text-align: center; /* A szöveg igazítása középre */
     margin: 40px 0; /* A margó beállítása */
@@ -545,7 +544,6 @@ footer {
     color: #007BFF; /* A szöveg színének beállítása hover állapotban */
 }
 
-/* Enhanced form design */
 .form-container {
     display: flex; /* A tartalmat flexbox segítségével rendezzük el */
     justify-content: center; /* A tartalom elrendezésének beállítása */
